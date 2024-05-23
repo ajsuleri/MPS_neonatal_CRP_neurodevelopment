@@ -101,4 +101,4 @@ identical(colnames(allmps_450k),colnames(allmps_EPIC)) #check column names match
 allmps <- rbind(allmps_450k, allmps_EPIC)
 write.csv(allmps, "path_to_storing_results", row.names = FALSE)
 
-# END OF THIS SCRIPT, GO TO PART B.
+# END OF THIS SCRIPT, GO TO PART B1.
