@@ -2,7 +2,7 @@
 ######################PROJECT: Neonatal inflammation####################
 #########################################################################
 
-#Author: Nicole Creasey
+#Authors: Nicole Creasey & Anna Suleri
 #Project: Mapping prenatal predictors and neurobehavioral outcomes of an epigenetic marker of neonatal inflammation - a longitudinal population-based study 
 
 #SET UP WORKSPACE 
