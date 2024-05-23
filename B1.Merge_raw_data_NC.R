@@ -210,4 +210,4 @@ df <- merge(df, allbrain,by="IDC", all=TRUE)
 #save the merged raw dataset 
 save(df, file="path_to_store_results")
 
-#END OF THIS SCRIPT, GO TO PART C.
+# END OF THIS SCRIPT, GO TO PART B2.
