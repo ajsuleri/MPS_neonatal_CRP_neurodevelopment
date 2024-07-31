@@ -400,12 +400,19 @@ radarchart(df_average2, axistype = 1, pcol= rgb(0.8,0.5,0.1,1), pfcol= rgb(0.8,0
 #\
 
 ## Histogram CRP trimester 1/2, cord blood and child age 5 (median/IQR)
-crp1 <- ggplot(figure_df, aes(x = HsCRPmgL_g1)) + geom_histogram(fill = 'sienna2', bins = 50) + theme_bw() + labs(x = 'C-reactive protein (trimester 1)', y = 'Frequency') + geom_label(x = 200, y = 2050, label = '4.4 (2.3 - 7.8) [mg/L]', color = 'black', size = 4) 
-crp2 <- ggplot(figure_df, aes(x = HsCRPmgL_g2)) + geom_histogram(fill = 'violetred3', bins = 50) + theme_bw() + labs(x = 'C-reactive protein (trimester 2)', y = 'Frequency') + geom_label(x = 150, y = 3050, label = '4.2 (2.4 - 7.0) [mg/L]', color = 'black', size = 4)
-crp3 <- ggplot(figure_df, aes(x = CRP_birth)) + geom_histogram(fill = 'turquoise4', bins = 50) + theme_bw() + labs(x = 'C-reactive protein (cord blood)', y = 'Frequency') + geom_label(x = 37, y = 3700, label = '0.2 (0.2 - 0.2) [mg/L]', color = 'black', size = 4)
-crp4 <- ggplot(figure_df, aes(x = CRPCHILD5)) + geom_histogram(fill = 'slateblue3', bins = 50) + theme_bw() + labs(x = 'C-reactive protein (child age 5 years)', y = 'Frequency') + geom_label(x = 73, y = 2700, label = '0.3 (0.1 - 0.9) [mg/L]', color = 'black', size = 4)
+# Untransformed 
+crp1 <- ggplot(figure_df, aes(x = HsCRPmgL_g1)) + geom_histogram(fill = 'sienna2', bins = 50) + theme_bw() + labs(x = 'C-reactive protein (trimester 1)', y = 'Frequency') #+ geom_label(x = 200, y = 2050, label = '4.4 (2.3 - 7.8) [mg/L]', color = 'black', size = 4) 
+crp2 <- ggplot(figure_df, aes(x = HsCRPmgL_g2)) + geom_histogram(fill = 'violetred3', bins = 50) + theme_bw() + labs(x = 'C-reactive protein (trimester 2)', y = 'Frequency') #+ geom_label(x = 150, y = 3050, label = '4.2 (2.4 - 7.0) [mg/L]', color = 'black', size = 4)
+crp3 <- ggplot(figure_df, aes(x = CRP_birth)) + geom_histogram(fill = 'turquoise4', bins = 50) + theme_bw() + labs(x = 'C-reactive protein (cord blood)', y = 'Frequency') #+ geom_label(x = 37, y = 3700, label = '0.2 (0.2 - 0.2) [mg/L]', color = 'black', size = 4)
+crp4 <- ggplot(figure_df, aes(x = CRPCHILD5)) + geom_histogram(fill = 'slateblue3', bins = 50) + theme_bw() + labs(x = 'C-reactive protein (child age 5 years)', y = 'Frequency') #+ geom_label(x = 73, y = 2700, label = '0.3 (0.1 - 0.9) [mg/L]', color = 'black', size = 4)
 
-ggarrange(crp1, crp2, crp3, crp4, labels = 'AUTO') 
+# Log transformed
+crp5 <- ggplot(figure_df, aes(x = log(HsCRPmgL_g1))) + geom_histogram(fill = 'sienna', bins = 50) + theme_bw() + labs(x = 'Log transformed C-reactive protein (trimester 1)', y = 'Frequency')
+crp6 <- ggplot(figure_df, aes(x = log(HsCRPmgL_g2))) + geom_histogram(fill = 'violetred4', bins = 50) + theme_bw() + labs(x = 'Log transformed C-reactive protein (trimester 2)', y = 'Frequency')
+crp7 <- ggplot(figure_df, aes(x = log(CRP_birth))) + geom_histogram(fill = 'turquoise', bins = 50) + theme_bw() + labs(x = 'Log transformed C-reactive protein (cord blood)', y = 'Frequency')
+crp8 <- ggplot(figure_df, aes(x = log(CRPCHILD5))) + geom_histogram(fill = 'slateblue4', bins = 50) + theme_bw() + labs(x = 'Log transformed C-reactive protein (child age 5 years)', y = 'Frequency')
+
+ggarrange(crp1, crp5, crp2, crp6, crp3, crp7, crp4, crp8, labels = 'AUTO') 
 
 #\
 
