@@ -412,7 +412,7 @@ crp6 <- ggplot(figure_df, aes(x = log(HsCRPmgL_g2))) + geom_histogram(fill = 'vi
 crp7 <- ggplot(figure_df, aes(x = log(CRP_birth))) + geom_histogram(fill = 'turquoise', bins = 50) + theme_bw() + labs(x = 'Log transformed C-reactive protein (cord blood)', y = 'Frequency')
 crp8 <- ggplot(figure_df, aes(x = log(CRPCHILD5))) + geom_histogram(fill = 'slateblue4', bins = 50) + theme_bw() + labs(x = 'Log transformed C-reactive protein (child age 5 years)', y = 'Frequency')
 
-ggarrange(crp1, crp5, crp2, crp6, crp3, crp7, crp4, crp8, labels = 'AUTO') 
+ggarrange(crp1, crp5, crp2, crp6, crp3, crp7, crp4, crp8, labels = 'AUTO', nrow = 4, ncol = 2) 
 
 #\
 
