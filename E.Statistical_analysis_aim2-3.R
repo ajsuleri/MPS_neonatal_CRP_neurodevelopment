@@ -2,7 +2,6 @@
 ######################PROJECT: Neonatal inflammation####################
 #########################################################################
 
-#Author: Anna Suleri
 #Project: Mapping prenatal predictors and neurobehavioral outcomes of an epigenetic marker of neonatal inflammation - a longitudinal population-based study 
 
 ###Parts in this script###
